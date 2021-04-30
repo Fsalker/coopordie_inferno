@@ -619,7 +619,7 @@ void SpawnEntities (char *mapname, char *entities, char *spawnpoint)
 	float		skill_level;
 
 	// <coopordie> SpawnEntities : prevent manual map changement
-	if ( worldserver->value )
+	if (0 && worldserver->value )
 	{
 		if ( WSrv_GetMapLock() > 0 )
 			WSrv_SetMapLock(WSrv_GetMapLock()-1);
