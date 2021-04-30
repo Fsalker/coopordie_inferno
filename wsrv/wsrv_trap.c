@@ -156,7 +156,7 @@ void trap_WSRV_InitGame()
 	worldserver   = gi.cvar ("worldserver",  "0", CVAR_LATCH);
 	wsrv_url      = gi.cvar ("wsrv_url",     "0", CVAR_NOSET);
 	wsrv_debug    = gi.cvar ("wsrv_debug",   "0", CVAR_ARCHIVE);
-	xmlrules      = gi.cvar ("xmlrules",      "", CVAR_NOSET);
+	xmlrules      = gi.cvar ("xmlrules",      "", CVAR_SERVERINFO);
 	challengemode = gi.cvar ("challengemode","0", CVAR_NOSET);
 
 	// For preserving worldserver data throught a dll reload, it is serialized and
