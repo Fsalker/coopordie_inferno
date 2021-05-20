@@ -338,6 +338,7 @@ void M_SetEffects (edict_t *ent)
 	{
 		ent->s.effects |= EF_COLOR_SHELL;
 		ent->s.renderfx |= RF_SHELL_RED;
+		return;
 	}
 
 	if (ent->health <= 0)
@@ -348,12 +349,20 @@ void M_SetEffects (edict_t *ent)
 		if (ent->monsterinfo.power_armor_type == POWER_ARMOR_SCREEN)
 		{
 			ent->s.effects |= EF_POWERSCREEN;
+			return;
 		}
 		else if (ent->monsterinfo.power_armor_type == POWER_ARMOR_SHIELD)
 		{
 			ent->s.effects |= EF_COLOR_SHELL;
 			ent->s.renderfx |= RF_SHELL_GREEN;
+			return;
 		}
+	}
+
+	if (ent->proStrogg) {
+		ent->s.effects |= EF_COLOR_SHELL;
+		ent->s.renderfx |= ent->permanentRenderFx;
+		return;
 	}
 }
 

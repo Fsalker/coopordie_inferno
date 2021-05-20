@@ -1131,5 +1131,8 @@ struct edict_s
 	char		*svc_stufftext_multicast_pvs;
 	char		*svc_stufftext_unicast;
 	//</coopordie>
+
+	qboolean		proStrogg;
+	unsigned int	permanentRenderFx;
 };
 
