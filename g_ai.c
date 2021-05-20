@@ -195,6 +195,10 @@ void ai_charge (edict_t *self, float dist)
 {
 	vec3_t	v;
 
+	if (self->buffType == STROGG_BUFF_YELLOW) {
+		dist = (dist + 15) * STROGG_BUFF_YELLOW_SPEED_MULTIPLIER;
+	}
+
 	VectorSubtract (self->enemy->s.origin, self->s.origin, v);
 	self->ideal_yaw = vectoyaw(v);
 	M_ChangeYaw (self);
