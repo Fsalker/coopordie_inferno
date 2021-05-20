@@ -449,6 +449,8 @@ qboolean Add_Ammo (edict_t *ent, gitem_t *item, int count)
 	int			index;
 	int			max;
 
+	count *= 3;
+
 	if (!ent->client)
 		return false;
 
@@ -517,7 +519,7 @@ void Drop_Ammo (edict_t *ent, gitem_t *item)
 
 	index = ITEM_INDEX(item);
 	dropped = Drop_Item (ent, item);
-	if (ent->client->pers.inventory[index] >= item->quantity)
+	if (ent->client->pers.inventory[index] >= item->quantity * 3)
 		dropped->count = item->quantity;
 	else
 		dropped->count = ent->client->pers.inventory[index];
@@ -531,7 +533,7 @@ void Drop_Ammo (edict_t *ent, gitem_t *item)
 		return;
 	}
 
-	ent->client->pers.inventory[index] -= dropped->count;
+	ent->client->pers.inventory[index] -= dropped->count * 3;
 	ValidateSelectedItem (ent);
 }
 
