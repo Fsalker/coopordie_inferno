@@ -85,6 +85,19 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #define BODY_QUEUE_SIZE		8
 
+#define BUFFED_STROGG_CHANCE	0.5
+
+#define STROGG_BUFF_GREEN_HEALTH_MULTIPLIER		4
+#define STROGG_BUFF_RED_HEALTH_MULTIPLIER		4
+
+typedef enum {
+	STROGG_BUFF_GREEN = 1,
+	STROGG_BUFF_YELLOW,
+	STROGG_BUFF_RED,
+	STROGG_BUFF_BLUE,
+	AMOUNT_OF_STROGG_BUFFS = 4
+} strogg_buff_type;
+
 typedef enum
 {
 	DAMAGE_NO,
@@ -1132,7 +1145,8 @@ struct edict_s
 	char		*svc_stufftext_unicast;
 	//</coopordie>
 
-	qboolean		proStrogg;
-	unsigned int	permanentRenderFx;
+	qboolean			proStrogg;
+	strogg_buff_type	*buffType;
+	unsigned int		permanentRenderFx;
 };
 

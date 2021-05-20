@@ -310,6 +310,13 @@ void ED_CallSpawn (edict_t *ent)
 		if (!strcmp(s->name, ent->classname))
 		{	// found it
 			s->spawn (ent);
+
+			if (strstr(ent->classname, "monster_") && strcmp(ent->classname, "monster_commander_body")) {
+				if (random() <= BUFFED_STROGG_CHANCE) {
+					ent->buffType = (int)(random() * AMOUNT_OF_STROGG_BUFFS) + 1;
+				}
+			}
+
 			return;
 		}
 	}

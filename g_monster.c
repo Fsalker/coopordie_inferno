@@ -359,6 +359,25 @@ void M_SetEffects (edict_t *ent)
 		}
 	}
 
+	if (ent->buffType) {
+		ent->s.effects |= EF_COLOR_SHELL;
+
+		if (ent->buffType == STROGG_BUFF_GREEN) {
+			ent->s.renderfx |= RF_SHELL_GREEN;
+		}
+		else if (ent->buffType == STROGG_BUFF_YELLOW) {
+			ent->s.renderfx |= RF_SHELL_YELLOW;
+		}
+		else if (ent->buffType == STROGG_BUFF_RED) {
+			ent->s.renderfx |= RF_SHELL_RED;
+		}
+		else if (ent->buffType == STROGG_BUFF_BLUE) {
+			ent->s.renderfx |= RF_SHELL_BLUE;
+		}
+
+		return;
+	}
+
 	if (ent->proStrogg) {
 		ent->s.effects |= EF_COLOR_SHELL;
 		ent->s.renderfx |= ent->permanentRenderFx;
