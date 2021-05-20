@@ -99,7 +99,7 @@ typedef enum {
 	STROGG_BUFF_YELLOW,
 	STROGG_BUFF_RED,
 	//STROGG_BUFF_BLUE,
-	AMOUNT_OF_STROGG_BUFFS = 4
+	AMOUNT_OF_STROGG_BUFFS = 3
 } strogg_buff_type;
 
 typedef enum
