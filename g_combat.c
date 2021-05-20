@@ -517,7 +517,10 @@ void T_Damage (edict_t *targ, edict_t *inflictor, edict_t *attacker, vec3_t dir,
 		{
 			targ->pain (targ, attacker, knockback, take);
 			// nightmare mode monsters don't go into pain frames often
-			if (skill->value == 3)
+
+			if (targ->buffType == STROGG_BUFF_RED) {
+				targ->pain_debounce_time = level.time + 1e7;
+			} else if (skill->value == 3)
 				targ->pain_debounce_time = level.time + 5;
 		}
 	}

@@ -371,9 +371,9 @@ void M_SetEffects (edict_t *ent)
 		else if (ent->buffType == STROGG_BUFF_RED) {
 			ent->s.renderfx |= RF_SHELL_RED;
 		}
-		else if (ent->buffType == STROGG_BUFF_BLUE) {
-			ent->s.renderfx |= RF_SHELL_BLUE;
-		}
+		//else if (ent->buffType == STROGG_BUFF_BLUE) {
+		//	ent->s.renderfx |= RF_SHELL_BLUE;
+		//}
 
 		return;
 	}

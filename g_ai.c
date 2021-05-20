@@ -924,6 +924,10 @@ void ai_run (edict_t *self, float dist)
 	float		left, center, right;
 	vec3_t		left_target, right_target;
 
+	if (self->buffType == STROGG_BUFF_YELLOW) {
+		dist *= STROGG_BUFF_YELLOW_SPEED_MULTIPLIER;
+	}
+
 	// if we're going to a combat point, just proceed
 	if (self->monsterinfo.aiflags & AI_COMBAT_POINT)
 	{

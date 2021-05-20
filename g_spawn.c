@@ -317,6 +317,18 @@ void ED_CallSpawn (edict_t *ent)
 				}
 			}
 
+			if (ent->buffType == STROGG_BUFF_GREEN) {
+				ent->monsterinfo.power_armor_type = POWER_ARMOR_SCREEN;
+				ent->monsterinfo.power_armor_power = STROGG_BUFF_GREEN_POWER_SCREEN_AMOUNT;
+				ent->health += STROGG_BUFF_GREEN_HEALTH_BONUS;
+				ent->gib_health += STROGG_BUFF_GREEN_HEALTH_BONUS * 0.75;
+			}
+
+			if (ent->buffType == STROGG_BUFF_RED) {
+				ent->health *= STROGG_BUFF_RED_HEALTH_MULTIPLIER;
+				ent->gib_health *= STROGG_BUFF_RED_HEALTH_MULTIPLIER;
+			}
+
 			return;
 		}
 	}
