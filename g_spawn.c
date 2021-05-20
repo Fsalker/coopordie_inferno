@@ -321,11 +321,13 @@ void ED_CallSpawn (edict_t *ent)
 				ent->monsterinfo.power_armor_type = POWER_ARMOR_SCREEN;
 				ent->monsterinfo.power_armor_power = STROGG_BUFF_GREEN_POWER_SCREEN_AMOUNT;
 				ent->health += STROGG_BUFF_GREEN_HEALTH_BONUS;
+				ent->max_health = ent->health;
 				ent->gib_health += STROGG_BUFF_GREEN_HEALTH_BONUS * 0.75;
 			}
 
 			if (ent->buffType == STROGG_BUFF_RED) {
 				ent->health *= STROGG_BUFF_RED_HEALTH_MULTIPLIER;
+				ent->max_health = ent->health;
 				ent->gib_health *= STROGG_BUFF_RED_HEALTH_MULTIPLIER;
 			}
 
