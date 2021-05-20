@@ -251,7 +251,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>D:\Games\Quake II (has all the old files, but it's kinda broken)\coopordie_pro\gamex86.dll</OutputFile>
+      <OutputFile>D:\Games\Quake II (has all the old files, but it's kinda broken)\coopordie_inferno\gamex86.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\game.def</ModuleDefinitionFile>
       <ProgramDatabaseFile>.\..\release/gamex86.pdb</ProgramDatabaseFile>
